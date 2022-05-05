@@ -2,12 +2,13 @@ import React from 'react';
 import { CgNametag } from 'react-icons/cg';
 import { RiArrowUpDownFill } from 'react-icons/ri';
 import { BsFillPersonCheckFill } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
+
 
 
 const InventoryCard = ({ item }) => {
 
-    const { name, image, description, price, quantity, supplier } = item
-
+    const { _id, name, image, description, price, quantity, supplier } = item
 
 
     return (
@@ -53,9 +54,15 @@ const InventoryCard = ({ item }) => {
 
                     <div className='flex items-center mt-6'>
 
-                        <button className="px-6 py-2  font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-amber-600 rounded-md hover:bg-amber-700 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
-                            Update Stock
-                        </button>
+
+                        <Link to={`/inventory/${_id}`}>
+
+                            <button className="px-6 py-2  font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-amber-600 rounded-md hover:bg-amber-700 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
+                                Update Stock
+                            </button>
+
+                        </Link>
+
 
                     </div>
 
