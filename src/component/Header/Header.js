@@ -41,7 +41,7 @@ const Header = () => {
 
                     <div className="max-w-lg lg:mx-12 lg:order-2">
                         <h1 className="text-3xl font-medium tracking-wide text-gray-800 dark:text-white lg:text-5xl">Welcome To Stokeify</h1>
-                        <p className="mt-4 text-gray-600 dark:text-gray-300">In stokeify we stock different computer parts and manage those stock parts . Generally we stock computer hard disk, desktop monitor, printer, processor , ram ,GPU ect </p>
+                        <p className="mt-4 text-gray-600 dark:text-gray-300">In stokeify we stock different computer parts and manage those stock parts . Generally we stock computer hard disk, desktop monitor, motherboard,printer, processor , ram ,GPU ect </p>
                         <div className="mt-6">
                             <Link to="#" className="block px-3 py-2 font-semibold text-center text-white transition-colors duration-200 transform bg-amber-600 rounded-md lg:inline hover:bg-amber-700">Know More</Link>
                         </div>
@@ -49,7 +49,7 @@ const Header = () => {
                 </div>
 
                 <div className="flex items-center justify-center w-full h-96 lg:w-1/2">
-                    <img src="https://i.ibb.co/JrN0GJq/nana-dua-1-Sfd9-QSPi4-unsplash.jpg" className="object-cover w-full h-full max-w-3xl rounded-md" />
+                    <img src="https://i.ibb.co/h11yFQt/gpu.jpg" className="object-cover w-full h-full max-w-3xl rounded-md" />
 
                 </div>
             </div>

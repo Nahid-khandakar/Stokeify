@@ -19,7 +19,7 @@ const Home = () => {
 
             <div className="grid  sm:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3  ">
                 {
-                    products.map(product => <InventoryCard
+                    products.slice(0, 6).map(product => <InventoryCard
                         key={product.name}
                         product={product}
                     ></InventoryCard>)

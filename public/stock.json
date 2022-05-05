@@ -1,82 +1,58 @@
 [
     {
-        "name": "Prodder",
-        "image": "https://i.ibb.co/KhBpPFY/smart-microchip-background-motherboard-closeup-technology.jpg",
-        "description": "mrannie0@trellian.com",
-        "price": 17,
+        "name": "Hard Disk",
+        "image": "https://i.ibb.co/Bqk0csf/harddisk.jpg",
+        "description": "A computer hard disk drive (HDD) is a non-volatile data storage device. Non-volatile refers to storage devices that maintain stored data when turned off.",
+        "price": 200,
         "quantity": 13,
         "supplier": "Milly Rannie"
     },
     {
-        "name": "Lotlux",
-        "image": "https://i.ibb.co/KhBpPFY/smart-microchip-background-motherboard-closeup-technology.jpg",
-        "description": "spiperley1@google.pl",
-        "price": 24,
+        "name": "Desktop Monitor",
+        "image": "https://i.ibb.co/S5wbHT3/monitor.jpg",
+        "description": "A computer monitor is an output device that displays information in pictorial or text form. A monitor usually comprises a visual display, some circuitry, a casing, and a power supply",
+        "price": 150,
         "quantity": 65,
         "supplier": "Saundra Piperley"
     },
     {
-        "name": "Job",
-        "image": "https://i.ibb.co/KhBpPFY/smart-microchip-background-motherboard-closeup-technology.jpg",
-        "description": "dmachostie2@live.com",
-        "price": 95,
+        "name": "Play station",
+        "image": "https://i.ibb.co/z6VyJkz/playstation.jpg",
+        "description": "The PlayStation 5, or PS5, is the latest version of Sony's gaming console. It was introduced on November 12, 2020, making it a competitor to the Xbox Series X and Nintendo Switch.",
+        "price": 250,
         "quantity": 38,
         "supplier": "Doralynn MacHostie"
     },
     {
-        "name": "Fixflex",
-        "image": "https://i.ibb.co/KhBpPFY/smart-microchip-background-motherboard-closeup-technology.jpg",
-        "description": "ggolledge3@wikia.com",
-        "price": 94,
+        "name": "Motherboard",
+        "image": "https://i.ibb.co/qkRNpn1/motherborad.jpg",
+        "description": "A motherboard provides connectivity between the hardware components of a computer, like the processor (CPU), memory (RAM), hard drive, and video card. ",
+        "price": 150,
         "quantity": 79,
         "supplier": "Gustav Golledge"
     },
     {
-        "name": "Flexidy",
-        "image": "https://i.ibb.co/KhBpPFY/smart-microchip-background-motherboard-closeup-technology.jpg",
-        "description": "jsherry4@spiegel.de",
-        "price": 8,
-        "quantity": 16,
-        "supplier": "Jeni Sherry"
-    },
-    {
-        "name": "Alpha",
-        "image": "https://i.ibb.co/KhBpPFY/smart-microchip-background-motherboard-closeup-technology.jpg",
-        "description": "hingyon5@t.co",
-        "price": 82,
+        "name": "Ram",
+        "image": "https://i.ibb.co/pjkD3KX/ram.jpg",
+        "description": "Random-access memory is a form of computer memory that can be read and changed in any order, typically used to store working data and machine code.",
+        "price": 99,
         "quantity": 20,
         "supplier": "Harman Ingyon"
     },
     {
-        "name": "P Prodder",
-        "image": "https://i.ibb.co/KhBpPFY/smart-microchip-background-motherboard-closeup-technology.jpg",
-        "description": "blinkin6@delicious.com",
-        "price": 58,
+        "name": "Processor",
+        "image": "https://i.ibb.co/j6V8FX0/processor.jpg",
+        "description": "A processor is an integrated electronic circuit that performs the calculations that run a computer.A processor performs arithmetical, logical and other basic instructions",
+        "price": 230,
         "quantity": 28,
         "supplier": "Bradan Linkin"
     },
     {
-        "name": "Ronstring",
-        "image": "https://i.ibb.co/KhBpPFY/smart-microchip-background-motherboard-closeup-technology.jpg",
-        "description": "disakowicz7@bloglines.com",
-        "price": 48,
-        "quantity": 42,
-        "supplier": "Davidde Isakowicz"
-    },
-    {
-        "name": "Sonair",
-        "image": "https://i.ibb.co/KhBpPFY/smart-microchip-background-motherboard-closeup-technology.jpg",
-        "description": "mmeeke8@newyorker.com",
-        "price": 13,
-        "quantity": 8,
-        "supplier": "Marshal Meeke"
-    },
-    {
-        "name": "It",
-        "image": "https://i.ibb.co/KhBpPFY/smart-microchip-background-motherboard-closeup-technology.jpg",
-        "description": "tgoodfellow9@dropbox.com",
-        "price": 45,
-        "quantity": 40,
-        "supplier": "Tiff Goodfellow"
+        "name": "Printer",
+        "image": "https://i.ibb.co/g6Qrg5H/printer.jpg",
+        "description": "A printer is a hardware output device that is used to generate hard copy and print any document. A document can be of any type such as a text file, image.",
+        "price": 180,
+        "quantity": 16,
+        "supplier": "Jeni Sherry"
     }
 ]

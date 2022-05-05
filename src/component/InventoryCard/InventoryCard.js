@@ -33,7 +33,7 @@ const InventoryCard = ({ product }) => {
                 <div className="px-6 py-4">
                     <h1 className="text-xl font-semibold text-gray-800 dark:text-white"> $ {price}</h1>
 
-                    <p className="py-2 text-gray-700 dark:text-gray-400">{description}</p>
+                    <p className="py-2 text-gray-700 dark:text-gray-400 text-justify">{description}</p>
 
                     <div className="flex items-center mt-2 text-gray-700 dark:text-gray-200">
                         <h1 className='text-xl'>
