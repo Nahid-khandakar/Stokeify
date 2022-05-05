@@ -8,7 +8,7 @@ import Inventory from './component/Inventory/Inventory';
 import Login from './component/Login/Login';
 import ManageInventory from './component/ManageInventory/ManageInventory'
 import MyItem from './component/MyItem/MyItem'
-import Error404 from './Error404/Error404';
+import Error404 from './component/Error404/Error404';
 
 function App() {
   return (

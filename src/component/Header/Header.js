@@ -4,55 +4,48 @@ import { Link } from 'react-router-dom';
 const Header = () => {
     return (
 
-        <nav className="bg-white shadow dark:bg-gray-800">
-            <div className="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
-                <div className="flex items-center justify-between">
-                    <div>
-                        <Link className="text-2xl font-bold text-gray-800 transition-colors duration-200 transform dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300" to="/">STOKEIFY</Link>
+
+        <header className="bg-white dark:bg-gray-800">
+            <nav className="bg-white dark:bg-gray-800">
+                <div className="container p-6 mx-auto">
+                    <Link className="block text-2xl font-bold text-center text-gray-800 dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300" to="#">Stokeify</Link>
+
+                    <div className="flex items-center justify-center mt-6 text-gray-600 capitalize dark:text-gray-300">
+                        <Link to="#" className="text-gray-800 dark:text-gray-200 border-b-2 border-blue-500 mx-1.5 sm:mx-6">home</Link>
+
+                        <Link to="#" className="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6">features</Link>
+
+                        <Link to="#" className="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6">pricing</Link>
+
+                        <Link to="#" className="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6">blog</Link>
+
+                    </div>
+                </div>
+            </nav>
+
+            <div className="container flex flex-col px-6 py-4 mx-auto space-y-6 lg:h-[32rem] lg:py-16 lg:flex-row lg:items-center">
+                <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2">
+                    <div className="flex justify-center order-2 mt-6 lg:mt-0 lg:space-y-3 lg:flex-col">
+                        <button className="w-3 h-3 mx-2 bg-blue-500 rounded-full lg:mx-0 focus:outline-none"></button>
+                        <button className="w-3 h-3 mx-2 bg-gray-300 rounded-full lg:mx-0 focus:outline-none hover:bg-blue-500"></button>
+                        <button className="w-3 h-3 mx-2 bg-gray-300 rounded-full lg:mx-0 focus:outline-none hover:bg-blue-500"></button>
+                        <button className="w-3 h-3 mx-2 bg-gray-300 rounded-full lg:mx-0 focus:outline-none hover:bg-blue-500"></button>
                     </div>
 
-                    <div className="flex md:hidden">
-                        <button type="button" className="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400" aria-label="toggle menu">
-                            <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current">
-                                <path className=' fill-white' d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path>
-                            </svg>
-                        </button>
+                    <div className="max-w-lg lg:mx-12 lg:order-2">
+                        <h1 className="text-3xl font-medium tracking-wide text-gray-800 dark:text-white lg:text-4xl">The best Apple Watch apps</h1>
+                        <p className="mt-4 text-gray-600 dark:text-gray-300">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut quia asperiores alias vero magnam recusandae adipisci ad vitae laudantium quod rem voluptatem eos accusantium cumque.</p>
+                        <div className="mt-6">
+                            <Link to="#" className="block px-3 py-2 font-semibold text-center text-white transition-colors duration-200 transform bg-blue-500 rounded-md lg:inline hover:bg-blue-400">Download from App Store</Link>
+                        </div>
                     </div>
                 </div>
 
-                <div className="items-center md:flex">
-
-                    <div className="flex flex-col md:flex-row md:mx-6">
-
-                        <Link className="my-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" to="/home">Home</Link>
-
-                        <Link className="my-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" to="/inventory">Inventory</Link>
-
-                        <Link className="my-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" to="/manageinvetory">Manage Inventory</Link>
-
-
-                        <Link className="my-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" to="/myitem">My Item</Link>
-
-                        <Link className="my-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" to="/blog">Blog</Link>
-
-                        <Link className="my-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" to="/add one">add one</Link>
-
-                        <Link className="my-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" to="/login">Login</Link>
-
-                    </div>
-
-
-                    <div className="flex justify-center md:block">
-                        <Link className="relative text-gray-700 transition-colors duration-200 transform dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300" to="#">
-                            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
-                                <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.70711 15.2929C4.07714 15.9229 4.52331 17 5.41421 17H17M17 17C15.8954 17 15 17.8954 15 19C15 20.1046 15.8954 21 17 21C18.1046 21 19 20.1046 19 19C19 17.8954 18.1046 17 17 17ZM9 19C9 20.1046 8.10457 21 7 21C5.89543 21 5 20.1046 5 19C5 17.8954 5.89543 17 7 17C8.10457 17 9 17.8954 9 19Z" />
-                            </svg>
-                        </Link>
-                    </div>
-
+                <div className="flex items-center justify-center w-full h-96 lg:w-1/2">
+                    <img className="object-cover w-full h-full max-w-3xl rounded-md" src={"https://i.ibb.co/JrN0GJq/nana-dua-1-Sfd9-QSPi4-unsplash.jpg"} />
                 </div>
             </div>
-        </nav>
+        </header>
     );
 };
 
