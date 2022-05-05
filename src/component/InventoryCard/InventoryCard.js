@@ -1,5 +1,4 @@
 import React from 'react';
-import { FaBeer } from 'react-icons/fa';
 import { CgNametag } from 'react-icons/cg';
 import { RiArrowUpDownFill } from 'react-icons/ri';
 
@@ -20,7 +19,7 @@ const InventoryCard = ({ product }) => {
             <div className="max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
                 <img className="object-cover object-center w-full h-56" src={image} alt="avatar" />
 
-                <div className="flex items-center px-6 py-3 bg-gray-900">
+                <div className="flex items-center px-6 py-3 bg-gray-600">
 
 
                     <h1 className='text-3xl text-white fill-current '>
