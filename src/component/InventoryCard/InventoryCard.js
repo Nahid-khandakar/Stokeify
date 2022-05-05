@@ -1,23 +1,69 @@
 import React from 'react';
+import { FaBeer } from 'react-icons/fa';
+import { CgNametag } from 'react-icons/cg';
+import { RiArrowUpDownFill } from 'react-icons/ri';
+
+import { BsFillPersonCheckFill } from 'react-icons/bs';
+
 
 const InventoryCard = ({ product }) => {
 
     const { name, image, description, price, quantity, supplier } = product
 
+
+
     return (
 
 
-        <div class="flex flex-col items-center justify-center max-w-sm mx-auto">
-            <div class="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md" style="background-image: url(https://images.unsplash.com/photo-1521903062400-b80f2cb8cb9d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80)"></div>
+        <div className='my-6'>
 
-            <div class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 dark:bg-gray-800">
-                <h3 class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white">Nike Revolt</h3>
+            <div className="max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                <img className="object-cover object-center w-full h-56" src={image} alt="avatar" />
 
-                <div class="flex items-center justify-between px-3 py-2 bg-gray-200 dark:bg-gray-700">
-                    <span class="font-bold text-gray-800 dark:text-gray-200">$129</span>
-                    <button class="px-2 py-1 text-xs font-semibold text-white uppercase transition-colors duration-200 transform bg-gray-800 rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">Add to cart</button>
+                <div className="flex items-center px-6 py-3 bg-gray-900">
+
+
+                    <h1 className='text-3xl text-white fill-current '>
+                        <CgNametag />
+                    </h1>
+
+                    <h1 className="mx-3 text-lg font-semibold text-white">{name}</h1>
+
+                </div>
+
+                <div className="px-6 py-4">
+                    <h1 className="text-xl font-semibold text-gray-800 dark:text-white"> $ {price}</h1>
+
+                    <p className="py-2 text-gray-700 dark:text-gray-400">{description}</p>
+
+                    <div className="flex items-center mt-2 text-gray-700 dark:text-gray-200">
+                        <h1 className='text-xl'>
+                            <RiArrowUpDownFill />
+                        </h1>
+
+                        <h1 className="px-2  text-base">{quantity} </h1>
+                    </div>
+
+                    <div className="flex items-center mt-3 text-gray-700 dark:text-gray-200">
+                        <h1 className='text-xl'>
+                            <BsFillPersonCheckFill />
+                        </h1>
+
+                        <h1 className="px-2  text-base"> {supplier} </h1>
+                    </div>
+
+
+                    <div className='flex items-center mt-6'>
+
+                        <button className="px-6 py-2  font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-amber-600 rounded-md hover:bg-amber-700 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
+                            Update Stock
+                        </button>
+
+                    </div>
+
                 </div>
             </div>
+
         </div>
 
 
