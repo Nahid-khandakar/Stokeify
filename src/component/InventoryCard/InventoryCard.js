@@ -1,13 +1,12 @@
 import React from 'react';
 import { CgNametag } from 'react-icons/cg';
 import { RiArrowUpDownFill } from 'react-icons/ri';
-
 import { BsFillPersonCheckFill } from 'react-icons/bs';
 
 
-const InventoryCard = ({ product }) => {
+const InventoryCard = ({ item }) => {
 
-    const { name, image, description, price, quantity, supplier } = product
+    const { name, image, description, price, quantity, supplier } = item
 
 
 
@@ -64,7 +63,6 @@ const InventoryCard = ({ product }) => {
             </div>
 
         </div>
-
 
     );
 };

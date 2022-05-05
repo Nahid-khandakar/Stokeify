@@ -2,14 +2,16 @@ import React, { useEffect, useState } from 'react';
 import InventoryCard from '../InventoryCard/InventoryCard';
 
 const Home = () => {
-    const [products, setProducts] = useState([])
-    //console.log(products)
+    const [items, setItems] = useState([])
+    //console.log(items)
 
     useEffect(() => {
-        fetch('stock.json')
+        fetch('http://localhost:5000/items')
             .then(res => res.json())
-            .then(data => setProducts(data))
+            .then(data => setItems(data))
     }, [])
+
+
     return (
 
 
@@ -19,9 +21,9 @@ const Home = () => {
 
             <div className="grid  sm:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3  ">
                 {
-                    products.slice(0, 6).map(product => <InventoryCard
-                        key={product.name}
-                        product={product}
+                    items.slice(0, 6).map(item => <InventoryCard
+                        key={item._id}
+                        item={item}
                     ></InventoryCard>)
                 }
             </div>
