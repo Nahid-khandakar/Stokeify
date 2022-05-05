@@ -1,0 +1,82 @@
+[
+    {
+        "name": "Prodder",
+        "image": "https://i.ibb.co/MgpgffV/christian-wiediger-4-Iv0-Z1e2n-NY-unsplash.jpg",
+        "description": "mrannie0@trellian.com",
+        "price": 17,
+        "quantity": 13,
+        "supplier": "Milly Rannie"
+    },
+    {
+        "name": "Lotlux",
+        "image": "https://i.ibb.co/MgpgffV/christian-wiediger-4-Iv0-Z1e2n-NY-unsplash.jpg",
+        "description": "spiperley1@google.pl",
+        "price": 24,
+        "quantity": 65,
+        "supplier": "Saundra Piperley"
+    },
+    {
+        "name": "Job",
+        "image": "https://i.ibb.co/MgpgffV/christian-wiediger-4-Iv0-Z1e2n-NY-unsplash.jpg",
+        "description": "dmachostie2@live.com",
+        "price": 95,
+        "quantity": 38,
+        "supplier": "Doralynn MacHostie"
+    },
+    {
+        "name": "Fixflex",
+        "image": "https://i.ibb.co/MgpgffV/christian-wiediger-4-Iv0-Z1e2n-NY-unsplash.jpg",
+        "description": "ggolledge3@wikia.com",
+        "price": 94,
+        "quantity": 79,
+        "supplier": "Gustav Golledge"
+    },
+    {
+        "name": "Flexidy",
+        "image": "https://i.ibb.co/MgpgffV/christian-wiediger-4-Iv0-Z1e2n-NY-unsplash.jpg",
+        "description": "jsherry4@spiegel.de",
+        "price": 8,
+        "quantity": 16,
+        "supplier": "Jeni Sherry"
+    },
+    {
+        "name": "Alpha",
+        "image": "https://i.ibb.co/MgpgffV/christian-wiediger-4-Iv0-Z1e2n-NY-unsplash.jpg",
+        "description": "hingyon5@t.co",
+        "price": 82,
+        "quantity": 20,
+        "supplier": "Harman Ingyon"
+    },
+    {
+        "name": "P Prodder",
+        "image": "https://i.ibb.co/MgpgffV/christian-wiediger-4-Iv0-Z1e2n-NY-unsplash.jpg",
+        "description": "blinkin6@delicious.com",
+        "price": 58,
+        "quantity": 28,
+        "supplier": "Bradan Linkin"
+    },
+    {
+        "name": "Ronstring",
+        "image": "https://i.ibb.co/MgpgffV/christian-wiediger-4-Iv0-Z1e2n-NY-unsplash.jpg",
+        "description": "disakowicz7@bloglines.com",
+        "price": 48,
+        "quantity": 42,
+        "supplier": "Davidde Isakowicz"
+    },
+    {
+        "name": "Sonair",
+        "image": "https://i.ibb.co/MgpgffV/christian-wiediger-4-Iv0-Z1e2n-NY-unsplash.jpg",
+        "description": "mmeeke8@newyorker.com",
+        "price": 13,
+        "quantity": 8,
+        "supplier": "Marshal Meeke"
+    },
+    {
+        "name": "It",
+        "image": "https://i.ibb.co/MgpgffV/christian-wiediger-4-Iv0-Z1e2n-NY-unsplash.jpg",
+        "description": "tgoodfellow9@dropbox.com",
+        "price": 45,
+        "quantity": 40,
+        "supplier": "Tiff Goodfellow"
+    }
+]
