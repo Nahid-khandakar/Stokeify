@@ -8,7 +8,11 @@ const Inventory = () => {
     const { id } = useParams()
 
     const [item, setItem] = useState({})
-    const [updateItem, setUpadteItem] = useState(0)
+
+    const [updateItem, setUpadteItem] = useState({})
+
+    //console.log(updateItem)
+
 
 
 
@@ -18,31 +22,49 @@ const Inventory = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setItem(data))
-    }, [id])
+    }, [])
+
+
 
     //put for update item
     const handleQuantity = (id) => {
 
-        const data = { quantity: item.quantity };
-        console.log(data)
 
-        const url = `http://localhost:5000/items/${id}`
-        console.log(url)
+        //another way
+        // setItem(x => {
+        //     return {
+        //         ...x, quantity: x.quantity - 1
+        //     }
+        // })
 
-        fetch(url, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data);
+
+
+
+        if (item.quantity > 0) {
+            setItem({ ...item, quantity: item.quantity - 1 })
+
+
+            const data = { quantity: item.quantity }
+            const url = `http://localhost:5000/items/${id}`
+            //console.log(url)
+
+            fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
             })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
+
+
 
     }
 
@@ -95,7 +117,14 @@ const Inventory = () => {
                     </div>
 
                     <div className="mt-8">
-                        <button onClick={() => handleQuantity(item._id)} className="px-5 py-2 font-semibold text-gray-100 transition-colors duration-200 transform bg-amber-700 rounded-md hover:bg-gray-700">Delivered</button>
+                        {
+                            item.quantity === 0 ?
+                                <button disabled className="px-5 py-2 font-semibold text-gray-100 transition-colors duration-200 transform  rounded-md bg-gray-700">Out of Stock</button>
+                                :
+                                <button onClick={() => handleQuantity(item._id)} className="px-5 py-2 font-semibold text-gray-100 transition-colors duration-200 transform bg-amber-700 rounded-md hover:bg-gray-700">Delivered</button>
+
+                        }
+
                     </div>
                 </div>
 
