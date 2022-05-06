@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { RiArrowUpDownFill } from 'react-icons/ri';
 import { BsFillPersonCheckFill } from 'react-icons/bs';
 
@@ -8,12 +8,6 @@ const Inventory = () => {
     const { id } = useParams()
 
     const [item, setItem] = useState({})
-
-    const [updateItem, setUpadteItem] = useState({})
-
-    //console.log(updateItem)
-
-
 
 
     //get single item
@@ -64,8 +58,11 @@ const Inventory = () => {
                 });
         }
 
+    }
 
-
+    //restock item
+    const handleRestock = (id) => {
+        console.log('clicked', id)
     }
 
 
@@ -73,65 +70,112 @@ const Inventory = () => {
 
     return (
 
+        <div>
+            <section className="bg-gray-100 dark:bg-gray-900 lg:py-12 lg:flex lg:justify-center">
 
-        <section className="bg-gray-100 dark:bg-gray-900 lg:py-12 lg:flex lg:justify-center">
+                <div className="bg-white dark:bg-gray-800 lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg lg:rounded-lg">
 
-            <div className="bg-white dark:bg-gray-800 lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg lg:rounded-lg">
+                    <div className="lg:w-1/2">
 
-                <div className="lg:w-1/2">
+                        <img className="h-64 bg-cover lg:rounded-lg lg:h-full" src={item.image} alt="" />
 
-                    <img className="h-64 bg-cover lg:rounded-lg lg:h-full" src={item.image} alt="" />
+                    </div>
+
+
+                    <div className="max-w-xl px-6 py-12 lg:max-w-5xl lg:w-1/2">
+
+                        <h2 className="text-2xl font-bold text-gray-800 dark:text-white md:text-3xl">
+                            <span className="dark:text-amber-600">{item.name}</span>
+                            <br />
+                            <span className="dark:text-gray-200">( ${item.price} )</span>
+
+                        </h2>
+
+                        <p className="mt-4 text-gray-600 dark:text-gray-400">
+                            {item.description}
+                        </p>
+
+
+
+                        <div className="flex items-center mt-2 text-gray-700 dark:text-amber-500">
+                            <h1 className='text-3xl'>
+                                <RiArrowUpDownFill />
+                            </h1>
+
+                            <h1 className="px-2  font-bold text-4xl ">{item.quantity} </h1>
+                        </div>
+
+                        <div className="flex items-center mt-3 text-gray-700 dark:text-gray-200">
+                            <h1 className='text-xl'>
+                                <BsFillPersonCheckFill />
+                            </h1>
+
+                            <h1 className="px-2  text-base"> {item.supplier} </h1>
+                        </div>
+
+                        <div className="mt-8">
+                            {
+                                item.quantity === 0 ?
+                                    <button disabled className="px-5 py-2 font-semibold text-gray-100 transition-colors duration-200 transform  rounded-md bg-gray-700">Out of Stock</button>
+                                    :
+                                    <button onClick={() => handleQuantity(item._id)} className="px-5 py-2 font-semibold text-gray-100 transition-colors duration-200 transform bg-amber-700 rounded-md hover:bg-gray-700">Delivered</button>
+
+                            }
+
+                        </div>
+                    </div>
+
 
                 </div>
 
+            </section>
 
-                <div className="max-w-xl px-6 py-12 lg:max-w-5xl lg:w-1/2">
+            {/* input quantity amount */}
+            <div className='bg-gray-100 dark:bg-gray-900 '>
 
-                    <h2 className="text-2xl font-bold text-gray-800 dark:text-white md:text-3xl">
-                        <span className="dark:text-amber-600">{item.name}</span>
-                        <br />
-                        <span className="dark:text-gray-200">( ${item.price} )</span>
-
-                    </h2>
-
-                    <p className="mt-4 text-gray-600 dark:text-gray-400">
-                        {item.description}
-                    </p>
+                <section className="flex flex-col max-w-5xl mx-auto rounded-sm overflow-hidden shadow-lg md:flex-row md:h-48 pb-5">
 
 
+                    <div className="md:flex md:items-center md:justify-center md:w-1/2 md:bg-gray-700 md:dark:bg-gray-800 ">
+                        <div className="px-6 py-6 md:px-8 md:py-0">
 
-                    <div className="flex items-center mt-2 text-gray-700 dark:text-amber-500">
-                        <h1 className='text-3xl'>
-                            <RiArrowUpDownFill />
-                        </h1>
+                            <h2 className="text-lg font-bold text-gray-700 dark:text-white md:text-gray-100">
 
-                        <h1 className="px-2  font-bold text-4xl ">{item.quantity} </h1>
+                                <span className="text-amber-600 text-2xl">Restock  </span>
+                                Again
+                            </h2>
+
+                            <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 md:text-gray-400">
+                                For restock products / Items use restock field
+                            </p>
+                        </div>
                     </div>
 
-                    <div className="flex items-center mt-3 text-gray-700 dark:text-gray-200">
-                        <h1 className='text-xl'>
-                            <BsFillPersonCheckFill />
-                        </h1>
+                    <div className="flex items-center justify-center pb-6 md:py-0 md:w-1/2 bg-white  ">
+                        <form>
+                            <div className="flex flex-col p-1 overflow-hidden border rounded-lg dark:border-gray-600 lg:flex-row dark:focus-within:border-amber-500 focus-within:ring focus-within:ring-opacity-40 focus-within:border-amber-500 focus-within:ring-amber-500">
 
-                        <h1 className="px-2  text-base"> {item.supplier} </h1>
+
+                                <input className="px-6 py-2 text-gray-700 placeholder-gray-500 bg-white outline-none" type="number" name="quantity" placeholder="Product / item amount" />
+
+                                <button onClick={() => handleRestock(item._id)} className="px-4 py-3 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-200 transform bg-amber-600 rounded-lg hover:bg-gray-700 ">Restock</button>
+
+
+                            </div>
+                        </form>
                     </div>
 
-                    <div className="mt-8">
-                        {
-                            item.quantity === 0 ?
-                                <button disabled className="px-5 py-2 font-semibold text-gray-100 transition-colors duration-200 transform  rounded-md bg-gray-700">Out of Stock</button>
-                                :
-                                <button onClick={() => handleQuantity(item._id)} className="px-5 py-2 font-semibold text-gray-100 transition-colors duration-200 transform bg-amber-700 rounded-md hover:bg-gray-700">Delivered</button>
 
-                        }
+                </section>
 
-                    </div>
-                </div>
 
             </div>
 
 
-        </section>
+
+
+        </div>
+
     );
 };
 
