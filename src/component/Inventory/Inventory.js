@@ -33,10 +33,12 @@ const Inventory = () => {
 
 
         if (item.quantity > 0) {
+
             setItem({ ...item, quantity: item.quantity - 1 })
 
 
-            const data = { quantity: item.quantity }
+            const data = { quantity: item.quantity - 1 }
+            console.log(data)
             const url = `http://localhost:5000/items/${id}`
             //console.log(url)
 
@@ -65,8 +67,30 @@ const Inventory = () => {
         const addItem = parseInt(inputItem)
 
         if (addItem > 0) {
+
             setItem({ ...item, quantity: item.quantity + addItem })
-            event.target.reset()
+
+            const data = { quantity: item.quantity + addItem }
+            console.log(data)
+            const url = `http://localhost:5000/items/${id}`
+
+
+            fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    event.target.reset()
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+
         }
         else {
             alert("Add positive value")
