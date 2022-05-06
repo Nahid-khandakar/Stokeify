@@ -9,6 +9,7 @@ import Login from './component/Login/Login';
 import ManageInventory from './component/ManageInventory/ManageInventory'
 import MyItem from './component/MyItem/MyItem'
 import Error404 from './component/Error404/Error404';
+import AddInventory from './component/AddInventory/AddInventory';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/inventory/:id' element={<Inventory></Inventory>}></Route>
         <Route path='/manageinvetory' element={<ManageInventory></ManageInventory>}></Route>
+        <Route path='/addinvetory' element={<AddInventory></AddInventory>}></Route>
         <Route path='/myitem' element={<MyItem></MyItem>}></Route>
         <Route path='/blog' element={<Blog></Blog>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>

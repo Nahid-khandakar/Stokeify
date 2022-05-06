@@ -49,9 +49,11 @@ const ManageInventory = () => {
 
                         <div className="mt-6 sm:-mx-2">
                             <div className="inline-flex w-full sm:w-auto sm:mx-2">
-                                <Link to="#" class="inline-flex items-center justify-center w-full px-5 py-2 text-white bg-amber-600 rounded-lg hover:bg-gray-700 focus:ring focus:ring-amber-300 focus:ring-opacity-80">
+
+                                <Link to="/addinvetory" class="inline-flex items-center justify-center w-full px-5 py-2 text-white bg-amber-600 rounded-lg hover:bg-gray-700 focus:ring focus:ring-amber-300 focus:ring-opacity-80">
                                     Add New Item
                                 </Link>
+
                             </div>
 
 
