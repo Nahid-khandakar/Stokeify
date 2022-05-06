@@ -13,7 +13,24 @@ const ManageInventory = () => {
 
     //delete item
     const handleDeleteItem = (id) => {
-        console.log('clicked', id)
+
+
+        //console.log('clicked', id)
+        const url = `http://localhost:5000/items/${id}`
+        fetch(url, {
+            method: 'DELETE'
+        }).then(response => {
+            return response.json()
+        }).then(data => {
+            //console.log(data.deletedCount)
+
+            if (data.deletedCount > 0) {
+                console.log('delete done')
+                const remainingItems = items.filter(item => item._id !== id)
+                setItems(remainingItems)
+            }
+        }
+        );
     }
 
     return (
