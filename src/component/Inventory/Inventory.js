@@ -32,8 +32,6 @@ const Inventory = () => {
         // })
 
 
-
-
         if (item.quantity > 0) {
             setItem({ ...item, quantity: item.quantity - 1 })
 
@@ -61,8 +59,19 @@ const Inventory = () => {
     }
 
     //restock item
-    const handleRestock = (id) => {
-        console.log('clicked', id)
+    const handleRestock = (event) => {
+        event.preventDefault();
+        const inputItem = event.target.quantity.value
+        const addItem = parseInt(inputItem)
+
+        if (addItem > 0) {
+            setItem({ ...item, quantity: item.quantity + addItem })
+            event.target.reset()
+        }
+        else {
+            alert("Add positive value")
+            event.target.reset()
+        }
     }
 
 
@@ -123,12 +132,14 @@ const Inventory = () => {
                             }
 
                         </div>
+
                     </div>
 
-
                 </div>
-
             </section>
+
+
+
 
             {/* input quantity amount */}
             <div className='bg-gray-100 dark:bg-gray-900 '>
@@ -152,19 +163,22 @@ const Inventory = () => {
                     </div>
 
                     <div className="flex items-center justify-center pb-6 md:py-0 md:w-1/2 bg-white  ">
-                        <form>
+
+
+                        <form onSubmit={handleRestock}>
+
                             <div className="flex flex-col p-1 overflow-hidden border rounded-lg dark:border-gray-600 lg:flex-row dark:focus-within:border-amber-500 focus-within:ring focus-within:ring-opacity-40 focus-within:border-amber-500 focus-within:ring-amber-500">
 
 
                                 <input className="px-6 py-2 text-gray-700 placeholder-gray-500 bg-white outline-none" type="number" name="quantity" placeholder="Product / item amount" />
 
-                                <button onClick={() => handleRestock(item._id)} className="px-4 py-3 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-200 transform bg-amber-600 rounded-lg hover:bg-gray-700 ">Restock</button>
-
+                                <input className="px-4 py-3 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-200 transform bg-amber-600 rounded-lg hover:bg-gray-700 " type="submit" value="Restock" />
 
                             </div>
-                        </form>
-                    </div>
 
+                        </form>
+
+                    </div>
 
                 </section>
 

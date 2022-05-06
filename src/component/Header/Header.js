@@ -14,8 +14,6 @@ const Header = () => {
                     <div className="flex items-center justify-center mt-6 text-gray-600 capitalize dark:text-gray-300">
                         <Link to="/home" className="text-gray-800 dark:text-gray-200 border-b-2 border-amber-500 mx-1.5 sm:mx-6">home</Link>
 
-                        <Link to="/inventory" className="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-amber-500 mx-1.5 sm:mx-6">Inventory</Link>
-
                         <Link to="/manageinvetory" className="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-amber-500 mx-1.5 sm:mx-6">Manage Inventory</Link>
 
                         <Link to="/myitem" className="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-amber-500 mx-1.5 sm:mx-6">My Item</Link>
