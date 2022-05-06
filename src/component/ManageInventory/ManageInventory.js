@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ManageInventory = () => {
 
@@ -25,7 +27,7 @@ const ManageInventory = () => {
             //console.log(data.deletedCount)
 
             if (data.deletedCount > 0) {
-                console.log('delete done')
+                toast("Delete Item Successful ");
                 const remainingItems = items.filter(item => item._id !== id)
                 setItems(remainingItems)
             }
@@ -71,7 +73,7 @@ const ManageInventory = () => {
                                                 <button onClick={() => handleDeleteItem(item._id)} className="px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-amber-600 rounded-md hover:bg-gray-700 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
                                                     Delete
                                                 </button>
-
+                                                <ToastContainer />
                                             </td>
                                         </tr>
 

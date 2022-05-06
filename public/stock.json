@@ -48,7 +48,23 @@
         "supplier": "Bradan Linkin"
     },
     {
-        "name": "Printer",
+        "name": "Printer0",
+        "image": "https://i.ibb.co/g6Qrg5H/printer.jpg",
+        "description": "A printer is a hardware output device that is used to generate hard copy and print any document. A document can be of any type such as a text file, image.",
+        "price": 180,
+        "quantity": 16,
+        "supplier": "Jeni Sherry"
+    },
+    {
+        "name": "Printer1",
+        "image": "https://i.ibb.co/g6Qrg5H/printer.jpg",
+        "description": "A printer is a hardware output device that is used to generate hard copy and print any document. A document can be of any type such as a text file, image.",
+        "price": 180,
+        "quantity": 16,
+        "supplier": "Jeni Sherry"
+    },
+    {
+        "name": "Printer2",
         "image": "https://i.ibb.co/g6Qrg5H/printer.jpg",
         "description": "A printer is a hardware output device that is used to generate hard copy and print any document. A document can be of any type such as a text file, image.",
         "price": 180,
