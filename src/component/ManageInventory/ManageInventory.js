@@ -11,11 +11,15 @@ const ManageInventory = () => {
     }, [])
 
 
+    //delete item
+    const handleDeleteItem = (id) => {
+        console.log('clicked', id)
+    }
 
     return (
         <div className="flex flex-col">
-            <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+            <div className="overflow-x-auto sm:-mx-5 lg:-mx-6 xl:-mx-6">
+                <div className="py-2 inline-block min-w-full sm:px-6 lg:px-6">
                     <div className="overflow-hidden">
                         <table className="min-w-full text-center">
 
@@ -47,7 +51,7 @@ const ManageInventory = () => {
                                             </td>
                                             <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
 
-                                                <button className="px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-amber-600 rounded-md hover:bg-gray-700 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
+                                                <button onClick={() => handleDeleteItem(item._id)} className="px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-amber-600 rounded-md hover:bg-gray-700 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
                                                     Delete
                                                 </button>
 
@@ -64,6 +68,7 @@ const ManageInventory = () => {
                 </div>
             </div>
         </div>
+
     );
 };
 
