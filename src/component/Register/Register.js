@@ -1,5 +1,4 @@
 import React from 'react';
-import { AiOutlineGoogle } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
 const Register = () => {
@@ -15,7 +14,7 @@ const Register = () => {
 
                     {/* userName */}
                     <div>
-                        <label for="username" className="block text-sm text-gray-800 dark:text-gray-200">Username</label>
+                        <label htmlFor="username" className="block text-sm text-gray-800 dark:text-gray-200">Username</label>
 
 
 
@@ -27,7 +26,7 @@ const Register = () => {
 
                     <div className="mt-4">
                         <div className="flex items-center justify-between">
-                            <label for="password" className="block text-sm text-gray-800 dark:text-gray-200">Password</label>
+                            <label htmlFor="password" className="block text-sm text-gray-800 dark:text-gray-200">Password</label>
 
                         </div>
 

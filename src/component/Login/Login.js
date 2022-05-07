@@ -9,7 +9,7 @@ const Login = () => {
             <div className="xl:w-1/3  p-6 m-auto  rounded-md shadow-md bg-gray-800">
                 <h1 className="text-3xl font-semibold text-center text-amber-500 ">Login</h1>
 
-                <p class="text-xl text-center text-gray-600 dark:text-gray-200">Welcome back!</p>
+                <p className="text-xl text-center text-gray-600 dark:text-gray-200">Welcome back!</p>
 
 
                 {/* from start here */}
@@ -17,7 +17,9 @@ const Login = () => {
 
                     {/* userName */}
                     <div>
-                        <label for="username" className="block text-sm text-gray-800 dark:text-gray-200">Username</label>
+                        <label htmlFor="username" className="block text-sm text-gray-800 dark:text-gray-200">Username</label>
+
+
 
 
 
@@ -29,7 +31,7 @@ const Login = () => {
 
                     <div className="mt-4">
                         <div className="flex items-center justify-between">
-                            <label for="password" className="block text-sm text-gray-800 dark:text-gray-200">Password</label>
+                            <label htmlFor="password" className="block text-sm text-gray-800 dark:text-gray-200">Password</label>
 
 
                             <a href="/" className="text-xs text-gray-600 dark:text-gray-400 hover:underline">Forget Password?</a>
@@ -80,10 +82,10 @@ const Login = () => {
                 </div>
 
                 {/* another line */}
-                <div class="flex items-center justify-between mt-6">
-                    <span class="w-1/5 border-b dark:border-gray-400 md:w-1/4"></span>
-                    <p class="text-xs text-gray-500 uppercase dark:text-gray-400 ">or sign up</p>
-                    <span class="w-1/5 border-b dark:border-gray-400 md:w-1/4"></span>
+                <div className="flex items-center justify-between mt-6">
+                    <span className="w-1/5 border-b dark:border-gray-400 md:w-1/4"></span>
+                    <p className="text-xs text-gray-500 uppercase dark:text-gray-400 ">or sign up</p>
+                    <span className="w-1/5 border-b dark:border-gray-400 md:w-1/4"></span>
                 </div>
 
 
