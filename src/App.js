@@ -12,6 +12,7 @@ import Error404 from './component/Error404/Error404';
 import AddInventory from './component/AddInventory/AddInventory';
 import Footer from './component/Footer/Footer';
 import AboutUs from './component/AboutUs/AboutUs';
+import Register from './component/Register/Register';
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
         <Route path='/blog' element={<Blog></Blog>}></Route>
         <Route path='/aboutus' element={<AboutUs></AboutUs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/register' element={<Register></Register>}></Route>
+
         <Route path='*' element={<Error404></Error404>}></Route>
       </Routes>
 

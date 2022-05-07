@@ -1,5 +1,6 @@
 import React from 'react';
 import { AiOutlineGoogle } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     return (
@@ -88,9 +89,9 @@ const Login = () => {
 
                 {/* go to the register page */}
                 <p className="mt-8 text-l font-light text-center text-gray-100"> Don't have an account?
-                    <a href="/" className="font-medium text-gray-200 hover:underline">
+                    <Link to="/register" className="font-medium text-gray-200 hover:underline">
                         <span className='text-amber-500 text-xl'>  Register</span>
-                    </a>
+                    </Link>
                 </p>
 
 
