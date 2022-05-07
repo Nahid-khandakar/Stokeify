@@ -37,11 +37,11 @@ const ManageInventory = () => {
     }
 
     return (
-        <div>
+        <div className='bg-gray-800'>
 
-            <div>
+            <div >
 
-                <section className="bg-white dark:bg-gray-900">
+                <section className=" bg-gray-800">
                     <div className="container flex flex-col items-center px-4 py-12 mx-auto text-center">
                         <h2 className="text-3xl font-semibold tracking-tight text-gray-700 sm:text-4xl dark:text-white">
                             <span className='text-amber-600'>Manage</span> stock items
@@ -50,7 +50,7 @@ const ManageInventory = () => {
                         <div className="mt-6 sm:-mx-2">
                             <div className="inline-flex w-full sm:w-auto sm:mx-2">
 
-                                <Link to="/addinvetory" class="inline-flex items-center justify-center w-full px-5 py-2 text-white bg-amber-600 rounded-lg hover:bg-gray-700 focus:ring focus:ring-amber-300 focus:ring-opacity-80">
+                                <Link to="/addinvetory" className="inline-flex items-center justify-center w-full px-5 py-2 text-white bg-amber-600 rounded-lg hover:bg-gray-700 focus:ring focus:ring-amber-300 focus:ring-opacity-80">
                                     Add New Item
                                 </Link>
 
@@ -65,19 +65,19 @@ const ManageInventory = () => {
             {/* table */}
             <div className="flex flex-col">
                 <div className="overflow-x-auto sm:-mx-5 lg:-mx-6 xl:-mx-6">
-                    <div className="py-2 inline-block min-w-full sm:px-6 lg:px-6">
+                    <div className="inline-block min-w-full sm:px-6 lg:px-6">
                         <div className="overflow-hidden">
                             <table className="min-w-full text-center">
 
-                                <thead className="border-b">
+                                <thead className="border-b bg-amber-600">
                                     <tr>
-                                        <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4">
+                                        <th scope="col" className="xl:text-xl  md:text-sm font-medium text-gray-50 px-6 py-4">
                                             Items Name
                                         </th>
-                                        <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4">
+                                        <th scope="col" className="xl:text-xl md:text-sm font-medium text-gray-50 px-6 py-4">
                                             Quantity
                                         </th>
-                                        <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4">
+                                        <th scope="col" className="xl:text-xl md:text-sm font-medium text-gray-50 px-6 py-4">
                                             Action
                                         </th>
                                     </tr>
@@ -86,7 +86,7 @@ const ManageInventory = () => {
                                 {
                                     items.map(item =>
 
-                                        <tbody key={item._id}>
+                                        <tbody key={item._id} className=''>
 
                                             <tr className="border-b bg-gray-800 boder-gray-900 " >
                                                 <td className="text-sm text-white font-medium px-6 py-4 whitespace-nowrap">
