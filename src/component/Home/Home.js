@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Banner from '../Banner/Banner';
 import InventoryCard from '../InventoryCard/InventoryCard';
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
 
         <div >
 
+            <Banner></Banner>
 
             <h1 className='text-4xl font-bold text-center mt-6 p-3 text-amber-600'>Stock Items</h1>
 

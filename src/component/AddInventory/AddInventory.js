@@ -18,7 +18,7 @@ const AddInventory = () => {
 
         if (price > 0 && quantity > 0) {
 
-            console.log(name, price, quantity, supplier, description, image)
+            //console.log(name, price, quantity, supplier, description, image)
 
             const data = { name, price, quantity, supplier, description, image };
 
