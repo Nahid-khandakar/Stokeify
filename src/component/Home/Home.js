@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Banner from '../Banner/Banner';
 import DownloadApp from '../DownloadApp/DownloadApp'
+import Features from '../Features/Features';
 import InventoryCard from '../InventoryCard/InventoryCard';
 
 const Home = () => {
@@ -32,7 +33,7 @@ const Home = () => {
                 }
             </div>
 
-
+            <Features></Features>
             <DownloadApp></DownloadApp>
 
         </div>

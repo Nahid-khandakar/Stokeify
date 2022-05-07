@@ -15,7 +15,7 @@ const DownloadApp = () => {
                     </div>
 
                     <div className="flex flex-col items-center mt-6 xl:items-start xl:w-1/2 xl:mt-0">
-                        <h2 className="text-3xl font-bold tracking-tight text-amber-600 xl:text-3xl ">
+                        <h2 className="text-2xl font-bold tracking-tight text-amber-600 xl:text-4xl ">
                             Download our free mobile app
                         </h2>
 
