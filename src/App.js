@@ -10,6 +10,7 @@ import ManageInventory from './component/ManageInventory/ManageInventory'
 import MyItem from './component/MyItem/MyItem'
 import Error404 from './component/Error404/Error404';
 import AddInventory from './component/AddInventory/AddInventory';
+import Footer from './component/Footer/Footer';
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
         <Route path='*' element={<Error404></Error404>}></Route>
       </Routes>
 
+
+      <Footer></Footer>
     </div>
   );
 }

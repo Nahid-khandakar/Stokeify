@@ -16,11 +16,11 @@ const Home = () => {
     return (
 
 
-        <div >
+        <div className='bg-gray-900 pb-10'>
 
             <Banner></Banner>
 
-            <h1 className='text-4xl font-bold text-center mt-6 p-3 text-amber-600'>Stock Items</h1>
+            <h1 className='text-4xl font-bold text-center mt-6 text-amber-600'>Stock Items</h1>
 
             <div className="grid  sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3  ">
                 {
