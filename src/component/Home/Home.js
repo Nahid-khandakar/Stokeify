@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Banner from '../Banner/Banner';
+import DownloadApp from '../DownloadApp/DownloadApp'
 import InventoryCard from '../InventoryCard/InventoryCard';
 
 const Home = () => {
@@ -30,6 +31,9 @@ const Home = () => {
                     ></InventoryCard>)
                 }
             </div>
+
+
+            <DownloadApp></DownloadApp>
 
         </div>
     );

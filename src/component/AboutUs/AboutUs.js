@@ -31,7 +31,7 @@ const AboutUs = () => {
                             </h1>
 
                             <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
-                                design director
+                                Head of Product
                             </p>
 
 
@@ -61,7 +61,7 @@ const AboutUs = () => {
                             </h1>
 
                             <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
-                                design director
+                                Software Architect
                             </p>
 
 
@@ -84,14 +84,14 @@ const AboutUs = () => {
                         {/* person 3 */}
                         <div className="flex flex-col items-center p-8 transition-colors duration-200 transform border cursor-pointer rounded-xl hover:border-transparent group hover:bg-gray-700 dark:border-gray-700 dark:hover:border-transparent">
                             <img className="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300"
-                                src="https://i.ibb.co/47NvnVH/ezgif-com-gif-maker-2.jpg" alt="" />
+                                src="https://i.ibb.co/BwFYDZf/p-3-min.jpg" alt="" />
 
                             <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white group-hover:text-white">
                                 Faith Harris
                             </h1>
 
                             <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
-                                design director
+                                Product Manager
                             </p>
 
 
@@ -121,7 +121,7 @@ const AboutUs = () => {
                             </h1>
 
                             <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
-                                design director
+                                Technical Lead
                             </p>
 
 
