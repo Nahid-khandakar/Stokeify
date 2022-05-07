@@ -37,11 +37,11 @@ const ManageInventory = () => {
     }
 
     return (
-        <div className='bg-gray-800'>
+        <div className='pb-10 bg-gray-900'>
 
-            <div >
+            <div>
 
-                <section className=" bg-gray-800">
+                <section className=" bg-gray-900">
                     <div className="container flex flex-col items-center px-4 py-12 mx-auto text-center">
                         <h2 className="text-3xl font-semibold tracking-tight text-gray-700 sm:text-4xl dark:text-white">
                             <span className='text-amber-600'>Manage</span> stock items
@@ -88,7 +88,7 @@ const ManageInventory = () => {
 
                                         <tbody key={item._id} className=''>
 
-                                            <tr className="border-b bg-gray-800 boder-gray-900 " >
+                                            <tr className="border-b bg-gray-900 border-gray-600" >
                                                 <td className="text-sm text-white font-medium px-6 py-4 whitespace-nowrap">
                                                     {item.name}
                                                 </td>

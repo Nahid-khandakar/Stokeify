@@ -166,7 +166,7 @@ const Inventory = () => {
 
 
             {/* input quantity amount */}
-            <div className='bg-gray-100 dark:bg-gray-900 '>
+            <div className='bg-gray-100 dark:bg-gray-900  pb-10'>
 
                 <section className="flex flex-col max-w-5xl mx-auto rounded-sm overflow-hidden shadow-lg md:flex-row md:h-48 pb-5">
 
