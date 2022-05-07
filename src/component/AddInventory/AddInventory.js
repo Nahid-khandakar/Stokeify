@@ -1,4 +1,6 @@
 import React from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddInventory = () => {
 
@@ -16,7 +18,7 @@ const AddInventory = () => {
 
         if (price > 0 && quantity > 0) {
 
-            //console.log(name, price, quantity, supplier, description, image)
+            console.log(name, price, quantity, supplier, description, image)
 
             const data = { name, price, quantity, supplier, description, image };
 
@@ -29,7 +31,7 @@ const AddInventory = () => {
             })
                 .then(response => response.json())
                 .then(data => {
-                    console.log('Success:', data);
+                    toast("item add successfully")
                     event.target.reset()
                 })
                 .catch((error) => {
@@ -102,6 +104,8 @@ const AddInventory = () => {
 
                     <div className="flex justify-center mt-6">
                         <button className="px-4 py-2 text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Add</button>
+
+                        <ToastContainer />
                     </div>
 
 

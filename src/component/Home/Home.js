@@ -22,7 +22,7 @@ const Home = () => {
 
             <div className="grid  sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3  ">
                 {
-                    items.slice(0, 6).map(item => <InventoryCard
+                    items?.slice(0, 6).map(item => <InventoryCard
                         key={item._id}
                         item={item}
                     ></InventoryCard>)
