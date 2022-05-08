@@ -8,7 +8,7 @@ const AddInventory = () => {
 
     //find user
     const [user] = useAuthState(auth);
-    console.log(user.email)
+    //console.log(user.email)
 
 
     const handleAddItem = (event) => {
