@@ -1,8 +1,14 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import auth from '../../Firebase/firebase.init';
 
 const AddInventory = () => {
+
+    //find user
+    const [user] = useAuthState(auth);
+    console.log(user.email)
 
 
     const handleAddItem = (event) => {
@@ -13,19 +19,21 @@ const AddInventory = () => {
         const supplier = event.target.supplierName.value
         const description = event.target.itemDescription.value
         const image = event.target.itemImage.value
+        const email = user.email
 
-        //
+        //console.log(name, price, quantity, supplier, description, image, email)
 
         if (price > 0 && quantity > 0) {
 
-            //console.log(name, price, quantity, supplier, description, image)
+            //console.log(name, price, quantity, supplier, description, image, email)
 
-            const data = { name, price, quantity, supplier, description, image };
+            const data = { name, price, quantity, supplier, description, image, email };
 
             fetch('http://localhost:5000/items', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'authorization': `${user.email} ${localStorage.getItem("accessToken")}`
                 },
                 body: JSON.stringify(data),
             })
