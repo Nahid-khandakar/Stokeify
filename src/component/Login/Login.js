@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../Firebase/firebase.init';
 import Loading from '../Loading/Loading';
@@ -18,6 +18,9 @@ const Login = () => {
 
     //for login
     const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
+
+    //for find user
+    const [user1] = useAuthState(auth);
 
     //for reset password
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
@@ -62,6 +65,34 @@ const Login = () => {
         else {
             toast('Give Email Address')
         }
+
+    }
+
+    //when user login
+    if (user1) {
+        const url = 'http://localhost:5000/login'
+
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(
+                { email: user.email }
+            ),
+        })
+            .then(response => response.json())
+            .then(data => {
+                //console.log(data.token);
+                localStorage.setItem("accessToken", data.token)
+                navigate(from, { replace: true });
+
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+
 
     }
 
