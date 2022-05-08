@@ -1,7 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../Firebase/firebase.init'
 
 const Register = () => {
+
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
+
+
+    const handleRegister = (event) => {
+        event.preventDefault();
+
+        const email = event.target.email.value
+        const password = event.target.password.value
+        console.log(email, password)
+        createUserWithEmailAndPassword(email, password)
+        event.target.reset()
+    }
+
+
     return (
         <div className='py-10 bg-gray-900'>
 
@@ -10,16 +32,16 @@ const Register = () => {
 
 
                 {/* from start here */}
-                <form className="mt-6">
+                <form className="mt-6" onSubmit={handleRegister}>
 
-                    {/* userName */}
+                    {/* email */}
                     <div>
-                        <label htmlFor="username" className="block text-sm text-gray-800 dark:text-gray-200">Username</label>
+                        <label htmlFor="username" className="block text-sm text-gray-800 dark:text-gray-200">Email</label>
 
 
 
-                        <input type="text" name="name"
-                            className="block w-full px-4 py-2 mt-2 text-gray-700  border rounded-md bg-gray-800 border-gray-600 focus:border-amber-300 focus:ring-amber-300 focus:outline-none focus:ring focus:ring-opacity-40" required />
+                        <input type="text" name="email"
+                            className="block w-full px-4 py-2 mt-2 text-gray-100  border rounded-md bg-gray-800 border-gray-600 focus:border-amber-300 focus:ring-amber-300 focus:outline-none focus:ring focus:ring-opacity-40" required />
 
 
                     </div>
@@ -34,7 +56,7 @@ const Register = () => {
 
                         {/* password */}
                         <input type="password" name="password"
-                            className="block w-full px-4 py-2 mt-2 text-gray-700  border rounded-md bg-gray-800 border-gray-600 focus:border-amber-300 focus:ring-amber-300 focus:outline-none focus:ring focus:ring-opacity-40" required />
+                            className="block w-full px-4 py-2 mt-2 text-gray-100  border rounded-md bg-gray-800 border-gray-600 focus:border-amber-300 focus:ring-amber-300 focus:outline-none focus:ring focus:ring-opacity-40" required />
 
 
 
