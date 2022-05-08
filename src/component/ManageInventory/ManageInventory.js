@@ -8,7 +8,7 @@ const ManageInventory = () => {
     const [items, setItems] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/items')
+        fetch('https://dry-escarpment-18462.herokuapp.com/items')
             .then(res => res.json())
             .then(data => setItems(data))
     }, [])
@@ -21,7 +21,7 @@ const ManageInventory = () => {
         //console.log('clicked', id)
 
         if (confirmDelete) {
-            const url = `http://localhost:5000/items/${id}`
+            const url = `https://dry-escarpment-18462.herokuapp.com/items/${id}`
             fetch(url, {
                 method: 'DELETE'
             }).then(response => {

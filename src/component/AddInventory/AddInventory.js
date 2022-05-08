@@ -29,7 +29,7 @@ const AddInventory = () => {
 
             const data = { name, price, quantity, supplier, description, image, email };
 
-            fetch('http://localhost:5000/items', {
+            fetch('https://dry-escarpment-18462.herokuapp.com/items', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

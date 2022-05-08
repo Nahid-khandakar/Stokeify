@@ -13,7 +13,7 @@ const Inventory = () => {
 
     //get single item
     useEffect(() => {
-        const url = `http://localhost:5000/items/${id}`
+        const url = `https://dry-escarpment-18462.herokuapp.com/items/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setItem(data))
@@ -40,7 +40,7 @@ const Inventory = () => {
 
             const data = { quantity: item.quantity - 1 }
             console.log(data)
-            const url = `http://localhost:5000/items/${id}`
+            const url = `https://dry-escarpment-18462.herokuapp.com/items/${id}`
             //console.log(url)
 
             fetch(url, {
@@ -73,7 +73,7 @@ const Inventory = () => {
 
             const data = { quantity: item.quantity + addItem }
             console.log(data)
-            const url = `http://localhost:5000/items/${id}`
+            const url = `https://dry-escarpment-18462.herokuapp.com/items/${id}`
 
 
             fetch(url, {

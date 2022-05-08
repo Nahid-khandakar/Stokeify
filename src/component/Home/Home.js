@@ -9,7 +9,7 @@ const Home = () => {
     //console.log(items)
 
     useEffect(() => {
-        fetch('http://localhost:5000/items')
+        fetch('https://dry-escarpment-18462.herokuapp.com/items')
             .then(res => res.json())
             .then(data => setItems(data))
     }, [])

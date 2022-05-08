@@ -17,7 +17,7 @@ const MyItem = () => {
 
     useEffect(() => {
         const email = user.email
-        const url = `http://localhost:5000/items/?email=${email}`
+        const url = `https://dry-escarpment-18462.herokuapp.com/items/?email=${email}`
         console.log(email, url)
         fetch(url, {
             'authorization': `${user.email} ${localStorage.getItem("accessToken")}`
@@ -35,7 +35,7 @@ const MyItem = () => {
         console.log('clicked', id)
         if (confirmDelete) {
 
-            const url = `http://localhost:5000/items/${id}`
+            const url = `https://dry-escarpment-18462.herokuapp.com/items/${id}`
             fetch(url, {
                 method: 'DELETE'
             }).then(response => {

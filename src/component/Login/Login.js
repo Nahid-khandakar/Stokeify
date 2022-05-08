@@ -66,7 +66,7 @@ const Login = () => {
 
     //when user login
     if (user) {
-        const url = 'http://localhost:5000/login'
+        const url = 'https://dry-escarpment-18462.herokuapp.com/login'
 
         console.log(user)
         fetch(url, {
