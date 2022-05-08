@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { RiArrowUpDownFill } from 'react-icons/ri';
 import { BsFillPersonCheckFill } from 'react-icons/bs';
+
 
 const Inventory = () => {
 
@@ -176,13 +177,21 @@ const Inventory = () => {
 
                             <h2 className="text-lg font-bold text-gray-700 dark:text-white md:text-gray-100">
 
-                                <span className="text-amber-600 text-2xl">Restock  </span>
-                                Again
+                                <span className="text-amber-600 text-2xl">Restock / Manage Inventory </span>
+
                             </h2>
 
-                            <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 md:text-gray-400">
-                                For restock products / Items use restock field
+                            <p className="mt-2 mb-2 text-sm text-gray-600 dark:text-gray-400 md:text-gray-400">
+                                For restock products use  Restock button , For manage item use Manage Inventory button
                             </p>
+
+                            <Link to='/manageinvetory'>
+                                <button
+                                    class="px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-amber-700 rounded-md hover:bg-gray-700 focus:outline-none focus:ring focus:ring-amber-300 focus:ring-opacity-80">
+                                    Manage Inventory
+                                </button>
+                            </Link>
+
                         </div>
                     </div>
 
