@@ -13,6 +13,7 @@ import AddInventory from './component/AddInventory/AddInventory';
 import Footer from './component/Footer/Footer';
 import AboutUs from './component/AboutUs/AboutUs';
 import Register from './component/Register/Register';
+import RequireAuth from './component/RequireAuth/RequireAuth';
 
 function App() {
   return (
@@ -23,15 +24,33 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
-        <Route path='/inventory/:id' element={<Inventory></Inventory>}></Route>
-        <Route path='/manageinvetory' element={<ManageInventory></ManageInventory>}></Route>
-        <Route path='/addinvetory' element={<AddInventory></AddInventory>}></Route>
-        <Route path='/myitem' element={<MyItem></MyItem>}></Route>
+
+
+        <Route path='/inventory/:id' element={<RequireAuth>
+          <Inventory></Inventory>
+        </RequireAuth>}></Route>
+
+        <Route path='/manageinvetory' element={<RequireAuth>
+          <ManageInventory></ManageInventory>
+        </RequireAuth>}></Route>
+
+        <Route path='/addinvetory' element={<RequireAuth>
+          <AddInventory></AddInventory>
+        </RequireAuth>}></Route>
+
+
+        <Route path='/myitem' element={<RequireAuth>
+          <MyItem></MyItem>
+        </RequireAuth>}></Route>
+
+
+
         <Route path='/blog' element={<Blog></Blog>}></Route>
         <Route path='/aboutus' element={<AboutUs></AboutUs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
-        <Route path='/register' element={<Register></Register>}></Route>
 
+
+        <Route path='/register' element={<Register></Register>}></Route>
         <Route path='*' element={<Error404></Error404>}></Route>
       </Routes>
 

@@ -8,7 +8,7 @@ import Loading from '../Loading/Loading';
 const Header = () => {
 
     //for check user
-    const [user, loading, error] = useAuthState(auth);
+    const [user, loading] = useAuthState(auth);
 
     if (loading) {
         return <Loading></Loading>
@@ -30,9 +30,23 @@ const Header = () => {
                     <div className="flex items-center justify-center mt-6 text-gray-600 capitalize dark:text-gray-300">
                         <Link to="/home" className="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-amber-500 mx-1.5 sm:mx-6">home</Link>
 
-                        <Link to="/manageinvetory" className="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-amber-500 mx-1.5 sm:mx-6">Manage Inventory</Link>
 
-                        <Link to="/myitem" className="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-amber-500 mx-1.5 sm:mx-6">My Item</Link>
+                        {
+                            user ?
+                                <Link to="/manageinvetory" className="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-amber-500 mx-1.5 sm:mx-6">Manage Inventory</Link>
+                                :
+                                ''
+                        }
+
+                        {
+                            user ?
+                                <Link to="/myitem" className="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-amber-500 mx-1.5 sm:mx-6">My Item</Link>
+                                :
+                                ''
+                        }
+
+
+
 
                         <Link to="/blog" className="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-amber-500 mx-1.5 sm:mx-6">Blog</Link>
 

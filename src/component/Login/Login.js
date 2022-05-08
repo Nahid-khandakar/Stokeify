@@ -13,6 +13,7 @@ const Login = () => {
     const emailRef = useRef('')
     const navigate = useNavigate()
     const location = useLocation()
+    let from = location.state?.from?.pathname || "/";
 
 
     //for login
@@ -20,6 +21,11 @@ const Login = () => {
 
     //for reset password
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+
+    //for user
+    if (user) {
+        navigate(from, { replace: true });
+    }
 
     //for loading
     if (loading) {
