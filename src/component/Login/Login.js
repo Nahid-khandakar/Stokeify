@@ -1,8 +1,65 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { AiOutlineGoogle } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import auth from '../../Firebase/firebase.init';
+import Loading from '../Loading/Loading';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
+
+    const emailRef = useRef('')
+    const navigate = useNavigate()
+    const location = useLocation()
+
+
+    //for login
+    const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
+
+    //for reset password
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+
+    //for loading
+    if (loading) {
+        return <Loading></Loading>
+    }
+
+    //for error
+    let errorElement;
+    if (error) {
+        errorElement = <p className='text-amber-500'>Error: {error?.message}</p>
+
+    }
+
+    //get form data and check
+    const handleLogin = (event) => {
+        event.preventDefault();
+
+        const email = event.target.email.value
+        const password = event.target.password.value
+
+        //console.log(email, password)
+        signInWithEmailAndPassword(email, password)
+
+    }
+
+    //reset password
+    const resetPassword = async () => {
+        const email = emailRef.current.value
+        console.log(email)
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast('Reset password link send on email')
+        }
+        else {
+            toast('Give Email Address')
+        }
+
+    }
+
+
     return (
         <div className='py-10 bg-gray-900'>
 
@@ -13,9 +70,9 @@ const Login = () => {
 
 
                 {/* from start here */}
-                <form className="mt-6">
+                <form className="mt-6" onSubmit={handleLogin}>
 
-                    {/* userName */}
+                    {/* email */}
                     <div>
                         <label htmlFor="username" className="block text-sm text-gray-800 dark:text-gray-200">Username</label>
 
@@ -23,8 +80,8 @@ const Login = () => {
 
 
 
-                        <input type="text" name="name"
-                            className="block w-full px-4 py-2 mt-2 text-gray-700  border rounded-md bg-gray-800 border-gray-600 focus:border-amber-300 focus:ring-amber-300 focus:outline-none focus:ring focus:ring-opacity-40" required />
+                        <input type="text" name="email" ref={emailRef}
+                            className="block w-full px-4 py-2 mt-2 text-gray-100  border rounded-md bg-gray-800 border-gray-600 focus:border-amber-300 focus:ring-amber-300 focus:outline-none focus:ring focus:ring-opacity-40" required />
 
 
                     </div>
@@ -33,15 +90,15 @@ const Login = () => {
                         <div className="flex items-center justify-between">
                             <label htmlFor="password" className="block text-sm text-gray-800 dark:text-gray-200">Password</label>
 
-
-                            <a href="/" className="text-xs text-gray-600 dark:text-gray-400 hover:underline">Forget Password?</a>
+                            {/* reset password */}
+                            <button onClick={resetPassword} className="text-xs text-gray-600 dark:text-gray-400 hover:underline">Forget Password?</button>
                         </div>
 
 
 
                         {/* password */}
                         <input type="password" name="password"
-                            className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" />
+                            className="block w-full px-4 py-2 mt-2 text-gray-100  border rounded-md bg-gray-800 border-gray-600 focus:border-amber-300 focus:ring-amber-300 focus:outline-none focus:ring focus:ring-opacity-40" required />
 
 
 
@@ -56,6 +113,9 @@ const Login = () => {
                         </input>
 
                     </div>
+
+                    {errorElement}
+                    <ToastContainer />
                 </form>
 
 
