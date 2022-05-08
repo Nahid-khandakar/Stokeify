@@ -17,23 +17,27 @@ const ManageInventory = () => {
     //delete item
     const handleDeleteItem = (id) => {
 
-
+        const confirmDelete = window.confirm('Sure to delete')
         //console.log('clicked', id)
-        const url = `http://localhost:5000/items/${id}`
-        fetch(url, {
-            method: 'DELETE'
-        }).then(response => {
-            return response.json()
-        }).then(data => {
-            //console.log(data.deletedCount)
 
-            if (data.deletedCount > 0) {
-                toast("Delete Item Successful ");
-                const remainingItems = items.filter(item => item._id !== id)
-                setItems(remainingItems)
+        if (confirmDelete) {
+            const url = `http://localhost:5000/items/${id}`
+            fetch(url, {
+                method: 'DELETE'
+            }).then(response => {
+                return response.json()
+            }).then(data => {
+                //console.log(data.deletedCount)
+
+                if (data.deletedCount > 0) {
+                    toast("Delete Item Successful ");
+                    const remainingItems = items.filter(item => item._id !== id)
+                    setItems(remainingItems)
+                }
             }
+            );
         }
-        );
+
     }
 
     return (
@@ -97,7 +101,7 @@ const ManageInventory = () => {
                                                 </td>
                                                 <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
 
-                                                    <button onClick={() => handleDeleteItem(item._id)} className="px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-amber-600 rounded-md hover:bg-gray-700 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
+                                                    <button onClick={() => handleDeleteItem(item._id)} className="px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-amber-600 rounded-md hover:bg-gray-700 focus:outline-none focus:ring focus:ring-amber-500 focus:ring-opacity-80">
                                                         Delete
                                                     </button>
                                                     <ToastContainer />
