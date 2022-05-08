@@ -1,16 +1,35 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase/firebase.init'
+import Loading from '../Loading/Loading';
+
+
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
+
+    const navigation = useNavigate()
 
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
+    //if ger user
+    if (user) {
+        navigation('/login')
+    }
+
+    //if any error
+    let errorElement;
+    if (error) {
+        errorElement = <p className='text-amber-500'>Error: {error?.message}</p>
+    }
 
 
     const handleRegister = (event) => {
@@ -18,9 +37,18 @@ const Register = () => {
 
         const email = event.target.email.value
         const password = event.target.password.value
-        console.log(email, password)
-        createUserWithEmailAndPassword(email, password)
-        event.target.reset()
+
+        if (!error) {
+            createUserWithEmailAndPassword(email, password)
+            toast('Successfully Registered')
+            event.target.reset()
+        }
+        else {
+            toast('Try again')
+        }
+
+
+
     }
 
 
@@ -62,6 +90,10 @@ const Register = () => {
 
                     </div>
 
+
+
+                    {errorElement}
+                    <ToastContainer />
                     {/* submit button */}
                     <div className="mt-6">
 
@@ -72,6 +104,9 @@ const Register = () => {
 
                     </div>
                 </form>
+
+
+
 
 
 
