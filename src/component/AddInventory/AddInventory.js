@@ -50,11 +50,7 @@ const AddInventory = () => {
             alert('give price and quantity positive number')
         }
 
-
-
     }
-
-
 
     return (
         <div>
