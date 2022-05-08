@@ -1,12 +1,12 @@
 import React, { useRef } from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { AiOutlineGoogle } from 'react-icons/ai';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../Firebase/firebase.init';
 import Loading from '../Loading/Loading';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
 
@@ -138,14 +138,7 @@ const Login = () => {
 
 
                 {/* google login button */}
-                <div className="flex items-center mt-6 -mx-2">
-                    <button type="button"
-                        className="flex items-center justify-center w-full px-6 py-2 mx-2 text-sm font-medium text-white transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:bg-blue-400 focus:outline-none">
-
-                        <span className='text-2xl'><AiOutlineGoogle /></span>
-                        <span className="hidden mx-2 sm:inline">Login with Google</span>
-                    </button>
-                </div>
+                <SocialLogin></SocialLogin>
 
                 {/* another line */}
                 <div className="flex items-center justify-between mt-6">
