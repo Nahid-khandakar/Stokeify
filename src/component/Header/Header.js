@@ -1,9 +1,25 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import auth from '../../Firebase/firebase.init';
+import Loading from '../Loading/Loading';
 
 const Header = () => {
-    return (
 
+    //for check user
+    const [user, loading, error] = useAuthState(auth);
+
+    if (loading) {
+        return <Loading></Loading>
+    }
+
+    //for sign out
+    const handleSignOut = () => {
+        signOut(auth);
+    }
+
+    return (
 
         <header className="bg-white dark:bg-gray-800">
             <nav className="bg-white dark:bg-gray-800">
@@ -12,17 +28,24 @@ const Header = () => {
                     <Link className="block text-2xl font-bold text-center text-amber-500 dark:text-amber lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300" to="/">Stokeify</Link>
 
                     <div className="flex items-center justify-center mt-6 text-gray-600 capitalize dark:text-gray-300">
-                        <Link to="/home" className="text-gray-800 dark:text-gray-200 border-b-2 border-amber-500 mx-1.5 sm:mx-6">home</Link>
+                        <Link to="/home" className="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-amber-500 mx-1.5 sm:mx-6">home</Link>
 
                         <Link to="/manageinvetory" className="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-amber-500 mx-1.5 sm:mx-6">Manage Inventory</Link>
 
                         <Link to="/myitem" className="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-amber-500 mx-1.5 sm:mx-6">My Item</Link>
 
-                        <Link to="/blog" className="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-amber-500 mx-1.5 sm:mx-6">blog</Link>
+                        <Link to="/blog" className="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-amber-500 mx-1.5 sm:mx-6">Blog</Link>
 
-                        <Link to="/aboutus" className="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-amber-500 mx-1.5 sm:mx-6">About Us</Link>
+                        <Link to="/aboutus" className="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-amber-500 mx-1.5 sm:mx-6">About us</Link>
 
-                        <Link to="login" className="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-amber-500 mx-1.5 sm:mx-6">Log in</Link>
+
+                        {
+                            user ?
+                                <button onClick={handleSignOut} className="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-amber-500 mx-1.5 sm:mx-6">Sign Out</button>
+                                :
+                                <Link to="login" className="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-amber-500 mx-1.5 sm:mx-6">Log in</Link>
+                        }
+
 
                     </div>
                 </div>
