@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase/firebase.init'
 import Loading from '../Loading/Loading';
@@ -12,8 +12,6 @@ import 'react-toastify/dist/ReactToastify.css';
 const Register = () => {
 
     const navigation = useNavigate()
-    const location = useLocation()
-    let from = location.state?.from?.pathname || "/";
 
     const [
         createUserWithEmailAndPassword,
@@ -24,7 +22,7 @@ const Register = () => {
 
     //if ger user
     if (user) {
-        navigation(from, { replace: true });
+        navigation('/login')
     }
 
     //if any error
@@ -39,8 +37,9 @@ const Register = () => {
 
         const email = event.target.email.value
         const password = event.target.password.value
-
+        console.log(email, password)
         if (!error) {
+
             createUserWithEmailAndPassword(email, password)
             toast('Successfully Registered')
             event.target.reset()

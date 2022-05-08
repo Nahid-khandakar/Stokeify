@@ -17,18 +17,14 @@ const Login = () => {
 
 
     //for login
-    const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
+    const [signInWithEmailAndPassword, userEmail, loading, error] = useSignInWithEmailAndPassword(auth);
 
     //for find user
-    const [user1] = useAuthState(auth);
+    const [user] = useAuthState(auth);
 
     //for reset password
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
-    //for user
-    if (user) {
-        navigate(from, { replace: true });
-    }
 
     //for loading
     if (loading) {
@@ -69,10 +65,10 @@ const Login = () => {
     }
 
     //when user login
-    if (user1) {
+    if (user) {
         const url = 'http://localhost:5000/login'
 
-
+        console.log(user)
         fetch(url, {
             method: 'POST',
             headers: {
@@ -84,7 +80,7 @@ const Login = () => {
         })
             .then(response => response.json())
             .then(data => {
-                //console.log(data.token);
+                console.log(data.token);
                 localStorage.setItem("accessToken", data.token)
                 navigate(from, { replace: true });
 
